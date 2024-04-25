@@ -1,0 +1,66 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+    
+<div class="container" style="display:flex; flex-direction:column;  width:100%; height:100%; text-align:center; padding:20px; ">
+   <label value="ICICI Bank Loans" style="font-weight:bold; font-size:30px;color:white;
+       text-shadow: -2px -2px 0 #5281c7,  
+                    2px -2px 0 #5281c7,
+                   -2px 2px 0 #5281c7,
+                    2px 2px 0 #5281c7;"></label>
+
+<grid style=" height:80% width:80%;border: 2px solid #5281c7;">
+    
+    <columns id="cols" style="border: 2px solid #5281c7;">
+            <column label="SNo" />
+            <column label="Loan Type" />
+            <column label="Amount" />
+            <column label="Span" />
+            <column label="Interest" />
+    </columns>
+    <rows id="rowss" style="border: 2px solid #5281c7;">
+        <row>
+            <label value="1" />
+            <label value="Personal Loan" />
+            <label value="35 Lakhs" />
+            <label value="1.5 Years" />
+            <label value="4.7%" />
+        </row>
+        <row>
+            <label value="2" />
+            <label value="Gold Loan" />
+            <label value="50 Lakhs" />
+            <label value="2 Years" />
+            <label value="5.3%" />
+        </row>
+        <row>
+            <label value="3" />
+            <label value="Education Loan" />
+            <label value="20 Lakhs" />
+            <label value="4 Years" />
+            <label value="5.8%" />
+        </row>
+        <row>
+            <label value="4" />
+            <label value="Home Loan" />
+            <label value="30 Lakhs" />
+            <label value="2 Years" />
+            <label value="4.5%" />
+        </row>
+        <row>
+            <label value="5" />
+            <label value="Business Loan" />
+            <label value="25 Lakhs" />
+            <label value="2.5 Years" />
+            <label value="6.3%" />
+        </row>
+    </rows>
+    
+</grid>
+<label value="Best Bank loan provided from SBI is " style="font-weight:bold; font-size:20px;color:white;
+	text-shadow: -1px -1px 0 #5281c7,  
+                    1px -1px 0 #5281c7,
+                   -1px 1px 0 #5281c7,
+                    1px 1px 0 #5281c7;"></label>
+<label value="Home Loan" style="font-weight:bold; font-size:30px;color:#5281c7;"></label>
+</div>
+</zk>

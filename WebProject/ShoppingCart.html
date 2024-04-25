@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping cart</title>
+    <style>
+        body {
+            color: black;
+            background-color: white;
+            text-align: center;
+        }
+        .container {
+            margin-bottom: 5px;
+            padding: 5px;
+            background-color: gray;
+            margin: 20px auto;
+            max-width: 400px; /* Adjusted max-width to match the example */
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        table {
+            margin: auto;
+        }
+        th, td {
+            padding: 10px;
+        }
+        img{
+            width: 30px;
+            height: 30px;
+        }
+        p{
+            font-size: 20px; /* Adjusted font size to match the example */
+            font-weight: bold; /* Adjusted font weight to match the example */
+        }
+        .item {
+            margin-bottom: 5px;
+            padding: 5px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .button-container {
+            text-align: center;
+        }
+        .button-container button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: black;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button-container button:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function addItemToCart(item, cost) {
+            var itemsOnCart = JSON.parse(localStorage.getItem("itemsOnCart")) || [];
+            var newItem = { name: item, cost: cost, quantity: 1 };  
+            itemsOnCart.push(newItem);
+            localStorage.setItem("itemsOnCart", JSON.stringify(itemsOnCart));
+            ItemsDisplay();
+        }
+
+        function pay(){
+            window.location.href = "https://dashboard.razorpay.com/app/dashboard";
+        }
+
+        function ItemsDisplay() {
+            var itemsDiv = document.getElementById("items");
+            itemsDiv.innerHTML = '';
+            var itemsOnCart = JSON.parse(localStorage.getItem("itemsOnCart")) || [];
+            var tableHtml = '<table>' +
+                                '<tr>' +
+                                    '<th>Item</th>' +
+                                    '<th>Cost (₹)</th>' + // Changed to Rupee symbol
+                                    '<th>Quantity</th>' +
+                                    '<th>Total (₹)</th>' + // Changed to Rupee symbol
+                                    '<th>Remove</th>' +
+                                '</tr>';
+            var totalCost = 0;
+            itemsOnCart.forEach(function(item, index) {
+                var totalItemCost = item.cost * item.quantity;
+                totalCost += totalItemCost;
+                tableHtml += '<tr>' +
+                                '<td>' + item.name + '</td>' +
+                                '<td>₹' + item.cost + '</td>' + // Changed to Rupee symbol
+                                '<td>' + 
+                                    '<button onclick="decrementQuantity(' + index + ')">-</button>' +
+                                    '<span>' + item.quantity + '</span>' +
+                                    '<button onclick="incrementQuantity(' + index + ')">+</button>' +
+                                '</td>' +
+                                '<td>₹' + totalItemCost + '</td>' + // Changed to Rupee symbol
+                                '<td><button onclick="removeItem(' + index + ')">Remove</button></td>' +
+                             '</tr>';
+            });
+            tableHtml += '<tr>' +
+                            '<td colspan="3">Total</td>' +
+                            '<td>₹' + totalCost + '</td>' + // Changed to Rupee symbol
+                            '<td> <button onclick = pay()>Pay</button></td>' +
+                         '</tr>';
+            tableHtml += '</table>';
+            itemsDiv.innerHTML = tableHtml;
+        }
+
+        function clearCart() {
+            localStorage.removeItem("itemsOnCart");
+            ItemsDisplay();
+        }
+
+        function showitems(){
+            ItemsDisplay();
+        }
+
+        function removeItem(index) {
+            var itemsOnCart = JSON.parse(localStorage.getItem("itemsOnCart")) || [];
+            itemsOnCart.splice(index, 1);
+            localStorage.setItem("itemsOnCart", JSON.stringify(itemsOnCart));
+            ItemsDisplay();
+        }
+
+        function incrementQuantity(index) {
+            var itemsOnCart = JSON.parse(localStorage.getItem("itemsOnCart")) || [];
+            itemsOnCart[index].quantity++;
+            localStorage.setItem("itemsOnCart", JSON.stringify(itemsOnCart));
+            ItemsDisplay();
+        }
+
+        function decrementQuantity(index) {
+            var itemsOnCart = JSON.parse(localStorage.getItem("itemsOnCart")) || [];
+            if (itemsOnCart[index].quantity > 1) {
+                itemsOnCart[index].quantity--;
+                localStorage.setItem("itemsOnCart", JSON.stringify(itemsOnCart));
+                ItemsDisplay();
+            }
+        }
+    </script>
+
+    <div class="container">
+        <p>Cart</p>
+        <div id="items"></div>
+        <div class="button-container">
+            <button onclick="showitems()">Show Items</button>
+            <button onclick="clearCart()">Clear Cart</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Cart</th>
+            </tr>
+            <tr>
+                <td><img src="Book.jpg" alt=""></td>
+                <td>Book</td>
+                <td>100</td>
+                <td><button onclick="addItemToCart('Book', 100)">Add Book</button></td>
+            </tr>
+            <tr>
+                <td><img src="Pen.avif" alt=""></td>
+                <td>Pen</td>
+                <td>10</td>
+                <td><button onclick="addItemToCart('Pen', 10)">Add Pen</button></td>
+            </tr>
+            <tr>
+                <td><img src="Bottle.avif" alt=""></td>
+                <td>Bottle</td>
+                <td>75</td>
+                <td><button onclick="addItemToCart('Bottle', 75)">Add Bottle</button></td>
+            </tr>
+            <tr>
+                <td><img src="Scissor.jpg" alt=""></td>
+                <td>Scissor</td>
+                <td>20</td>
+                <td><button onclick="addItemToCart('Scissor', 20)">Add Scissor</button></td>
+            </tr>
+            <tr>
+                <td><img src="Box.jpg" alt=""></td>
+                <td>Box</td>
+                <td>200</td>
+                <td><button onclick="addItemToCart('Box', 200)">Add Box</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApiSample</title>
+    <style>
+        .container{
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 70%; 
+            margin: 0 auto; 
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<script>
+    var req = new XMLHttpRequest();
+
+    var url = 'https://reqres.in/api/users';
+    var method = 'GET';
+
+    req.onreadystatechange = function(){
+        if(req.readyState == XMLHttpRequest.DONE){
+            if(req.status== 200)
+            {
+                var data = JSON.parse(req.responseText);
+                displayData(data.data);                
+            }
+            else{
+                document.getElementById('response').textContent = 'failed to retrieve';
+            }
+        }
+    }
+    function getDetails(){
+        req.open(method,url,true);
+        req.send();
+    }
+    function displayData(users){
+        var table = '<table>';
+            table += '<tr><th>ID</th><th>Email</th><th>First Name</th><th>Last Name</th><th>Avatar</th></tr>';
+            users.forEach(function(user) {
+                table += '<tr>';
+                table += '<td>' + user.id + '</td>';
+                table += '<td>' + user.email + '</td>';
+                table += '<td>' + user.first_name + '</td>';
+                table += '<td>' + user.last_name + '</td>';
+                table += '<td><img src="' + user.avatar + '" alt="Avatar" width="50"></td>';
+                table += '</tr>';
+        });
+        table += '</table>';
+        document.getElementById('response').innerHTML = table;
+    }
+</script>
+<body>
+    <div class = 'container'>
+        <button onclick="getDetails()">Get details</button>    
+        <p id = 'response'></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested API Calls</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<script>
+    var req = new XMLHttpRequest();
+    var url = 'https://reqres.in/api/users?page=2';
+    var method = 'GET';
+
+    req.onreadystatechange = function(){
+        if(req.readyState == XMLHttpRequest.DONE){
+            if(req.status == 200){
+                var data = JSON.parse(req.responseText);
+                var userIds = data.data.map(function(user) {
+                    return user.id;
+                });
+                // Make a nested API call using the user IDs
+                fetchUserDetails(userIds);
+            } else {
+                document.getElementById('response').textContent = 'Failed to retrieve data.';
+            }
+        }
+    };
+
+    function fetchUserDetails(userIds) {
+        // Example nested API call using XMLHttpRequest
+        var userDetails = [];
+        var completedRequests = 0;
+
+        userIds.forEach(function(userId) {
+            var nestedReq = new XMLHttpRequest();
+            nestedReq.onreadystatechange = function() {
+                if (nestedReq.readyState == XMLHttpRequest.DONE) {
+                    if (nestedReq.status == 200) {
+                        var userDetail = JSON.parse(nestedReq.responseText).data;
+                        userDetails.push(userDetail);
+                    }
+                    completedRequests++;
+                    if (completedRequests === userIds.length) {
+                        // All nested requests completed, display the data
+                        displayData(userDetails);
+                    }
+                }
+            };
+            nestedReq.open('GET', 'https://reqres.in/api/users/' + userId, true);
+            nestedReq.send();
+        });
+    }
+
+    function displayData(userDetails) {
+        var table = '<table>';
+        table += '<tr><th>ID</th><th>Email</th><th>First Name</th><th>Last Name</th><th>Avatar</th></tr>';
+        userDetails.forEach(function(userDetail) {
+            table += '<tr>';
+            table += '<td>' + userDetail.id + '</td>';
+            table += '<td>' + userDetail.email + '</td>';
+            table += '<td>' + userDetail.first_name + '</td>';
+            table += '<td>' + userDetail.last_name + '</td>';
+            table += '<td><img src="' + userDetail.avatar + '" alt="Avatar" width="50"></td>';
+            table += '</tr>';
+        });
+        table += '</table>';
+        document.getElementById('response').innerHTML = table;
+    }
+
+    function getDetails() {
+        req.open(method, url, true);
+        req.send();
+    }
+</script>
+<body>
+    <div class="container">
+        <button onclick="getDetails()">Get details</button>    
+        <div id="response"></div>
+    </div>
+</body>
+</html>

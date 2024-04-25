@@ -1,0 +1,13 @@
+<?page title="Frame1" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+    <div sclass="div2">        
+            <label class="Heading2">Banks Avail</label>
+            <div class="btn"><checkbox id="SBI" /><label onClick="zk('$SBI').toggle()" style="cursor:pointer;">SBI</label></div>
+            <div class="btn"><checkbox id="HDFC" /><label onClick="zk('$HDFC').toggle()" style="cursor:pointer;">HDFC</label></div>
+            <div class="btn"><checkbox id="ICICI" /><label onClick="zk('$ICICI').toggle()" style="cursor:pointer;">ICICI</label></div>
+            <div class="btn"><checkbox id="Axis" /><label onClick="zk('$Axis').toggle()" style="cursor:pointer;">Axis</label></div>
+            <div class="btn"><checkbox id="BoB" /><label onClick="zk('$BoB').toggle()" style="cursor:pointer;">BoB</label></div>
+            <div class="btn"><checkbox id="Canara" /><label onClick="zk('$Canara').toggle()" style="cursor:pointer;">Canara</label></div>
+    </div>
+</zk>

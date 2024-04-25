@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="ScriptAjaxCrud.js"></script> 
+    <link rel="stylesheet" type="text/css" href="indexAjaxCrud.css">
+    
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="DivTop">
+        
+            <label for="ID" id="u_id_label">ID</label>
+            <textarea id="u_id"></textarea>
+            <br>
+            <label for="Name" id="u_name_label">Name</label>
+            <textarea id="u_name"></textarea>
+        
+        </div>
+
+        <div class="DivBottom">
+            <label>CRUD</label>
+            <table >
+                <tr>
+                    <th>
+                        <button id="first">First</button>
+                    </th>
+                    <th>
+                        <button id="next">Next</button>
+                    </th>
+                    <th>
+                        <button id="last">Last</button>
+                    </th>
+                    <th>
+                        <button id="previous">Previous</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <button id="create">Create</button>
+                    </th>
+                    <th>
+                        <button id="read">Read</button>
+                    </th>
+                    <th>
+                        <button id="update">Update</button>
+                    </th>
+                    <th>
+                        <button id="delete">Delete</button>
+                    </th>
+                </tr>
+            </table>
+            </div>
+            <div class="tableContainer" id="tab" style="display: none;">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Avatar</th>
+                    </tr>
+                    <tbody id="tbody"></tbody>
+                </table>                
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?page title="Frame1" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+    <div sclass="div3">
+    <div class="slideshow-container">
+        <image class="slide" src="image1.jpg"></image>
+        <image class="slide" src="image2.jpg"></image>
+        <image class="slide" src="image3.jpg"></image>
+        <image class="slide" src="image4.jpg"></image>
+        <image class="slide" src="image5.jpg"></image>
+        <image class="slide" src="image6.jpg"></image>
+    </div>
+    </div>
+</zk>

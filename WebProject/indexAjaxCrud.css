@@ -1,0 +1,117 @@
+body {
+    text-align: center;
+    background-color: black;
+}
+
+.container {
+    background-color: rgb(46, 119, 214);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    max-height: 1000px;
+    margin-top: 40px;
+    border-radius: 20px;
+}
+
+.DivTop {
+    max-width: 700px;
+    max-height: 300px;
+    background-color: rgba(255, 255, 255, 0.363);
+    padding-bottom: 10%;
+    margin-bottom: 20px;
+    color: white;
+    margin-top: 20px;
+    padding-left: 120px;
+    padding-right: 120px;
+    border-radius: 20px;
+}
+
+.DivTop label {
+    border-radius: 20px;
+    background-color:rgb(46, 119, 214);
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 1px;
+    font-size: 20px;
+}
+
+.DivTop div {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+#u_id,#u_name{
+    background-color: white;
+    color: black;
+    font-size: 30px;
+}
+
+.DivBottom {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.363);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 590px;
+    max-height: 300px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.DivBottom label {
+    background-color:rgb(46, 119, 214);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.DivBottom button {
+    margin: 20px 10px 10px 10px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    background-color: rgb(46, 119, 214);
+}
+.tableContainer{
+    background-color: rgba(255, 255, 255, 0.363);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 590px;
+    max-height: 300px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+.tableContainer th,tr,td{
+    /* padding: 10px 32px 10px 32px; */
+    border: 1px solid rgba(255, 255, 255, 0.363);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+.tableContainer table{
+    max-width: 730px;
+}

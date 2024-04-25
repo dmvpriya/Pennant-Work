@@ -1,0 +1,98 @@
+<?page title="Frame1" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+    <div id="container1"> 
+    <div sclass="scrolling-banner">
+    <div sclass="marquee">Rate of Interest for Education Loan in SBI Bank is 5.4% </div></div>
+        <grid sclass="form1">
+            <auxhead sclass="Header1"> 
+                <auxheader colspan="4" iconSclass="z-icon-user-circle-o"><image style="width:40px;height:30px" src="data:image/png;base64,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"></image>Registration form</auxheader>
+            </auxhead>
+            <columns>
+                <column/>
+                <column/>
+            </columns>
+            <rows>
+                <row id="name">
+                    <label value="UserName"/>
+                    <textbox id="namebox" hflex="1" constraint="no empty"></textbox>
+                </row>
+                <row>
+                    <label value="EmailID"/>
+                    <textbox id="emailbox" hflex="1" constraint="no empty"></textbox>
+                </row>
+                <row>
+                    <label value="PhoneNumber"/>
+                    <textbox id="phonebox" hflex="1" constraint="/^\d{10}$/"></textbox>
+                </row>
+                <row>
+                    <label value="Gender"/>
+                    <radiogroup id="genderRadio">
+                        <image style="width:30px;height:20px;" src = "data:image/png;base64,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"></image>
+                        <radio label="Male" style="width:30px;height:30px;" value="Male" iconSclass="z-icom-male" checked="true" image=""></radio>
+                        <image style="width:30px;height:20px;" src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJUAAACUCAMAAACtIJvYAAAAaVBMVEUAAAD////8/Pz4+PjR0dHx8fHFxcXk5OTr6+v19fXLy8vAwMDU1NQxMTHd3d2ysrKhoaFnZ2cmJia5ubl2dnYQEBAhISEsLCyDg4Orq6thYWE4ODgaGhpMTEyJiYk/Pz+ZmZlYWFiRkZFkJRqhAAAGQElEQVR4nO2c65aqMAyFEWVARBRFBQFB3/8hD5dRKfSSls0Z16zZP10CnxKSNEmxFgZyE0um8svkpH1ZBsckuRSq1m39v6mOBxVTrdwPVqtVELpmeLpUyweB6a3tNUkNwDSpvK0WVKf7ajkrVXAxgKp1Xc1ItTJjahQ7c1EFJ3MqqwjnoXInMDXSuIt0Kq+cSKWBRaay46lQ1smFU+0nQ1lWRnVdVCr3DKCyHlgqwP1r5UOpAgyUVUCpJj9/Tx2BVBOc+kARKSTSqEBW1YjktEhUrjLNoyuBUaU4KIt0QdKXCiQVxTlQqNZIKOsGotpAqShPIYXqBqXaEmI0gQoVbZ4KIFQe1NgtawehCiHpwlsEj0WgQkXmp+4QKh9MlUOodmAqwiUJX0HkxniqCk1lI6iwTrSW2rkTqPSqMASpF/c/QeX9XqrqI6ngngFiV3Aq9bqeQAXN2htBPMMRTQXxol9oKvUlCV/BLZz/qP6o3kJnyOePpMo+kopQ7/sBu7p+JFX0i6nQ60EMFXo9iKFC51cYKvTK6w6hisBUJYSKMimgJQgVGgpC5XwkFTyRgawH4QsvQh9ATQWuINdKp1M5dzhVPJ0KnV3VuioXz0oq+MrZsg7KMRAlFay325Oyzaui8maAUsdnFRW8pNZKVWlQUE0fjuFK1cpRUOFdaKu7olgkp1rOA2VZitlNORU6tXopl1uWlArb2mVUGVPhs4WepMFQQoXuVrLKZY1eMRW8HDrQWZLQiKhcfAIzVC4OPHyqtXwoG6VE1A/gU9kzZAo8FUe+hxDdQXhbl68b38kLrR1eZedJ5B7Ez6ALHq4Y6y7M/iT+yp4pND+ZJLmfNOK48ZR5aJnyuy9LGxSZTFiZjNmrdE0Vmbsyb/dWEXCqz8oP8Ua9mYI0Qefvk2hqUnooouSR+rThe+oc8toLg680iQpNSzuVUVylmyB0PY1dHSb7cdZOGFLywVTdngRSNaIESsL41x/VH9Uvodr/T6rWEVJqbYduXnX+3WcLJ4g2C+pS494C7WLt/Xp6VO6+aDO1NTH36iah93U41trmpUPlbO759+aVigb1rJ/VRphHxBCoR/V1a3fpxU0UoZfaLq1pdZPM5YO8pYpEZXtV1kXl8n0Rmr5bSV2Wdir3Dik2EqjWxxdF1rYVtIoi3XYl95U8xhvAfLvt3rL3JbpFuF79YdMe01syZZWyZSKncnZMxtK5Rd1FRsdQ9T+Kj/I/TEbl3NgEtLX0Rai7NzVqvZXNZmRFZbaa8Ic2fel+tH79rxto94bdz4e4ViSiCq6jVLirZZrMEXRHjh6SQyzaQsGn8q/jU3/vWDHoNj27SZy2esx3YTwqj+ePLk/XvNTt2b8SGofTwT5xt9yPqZyKe+7ejzrquIaytyDl333OlvYRVcgPvExPz6UvvwrGN/GDwrgKMqByBMHkwtrlkhpzBgVsV+BVhreRpXJFpjxMK+2KBDXKkUUeOGLdPUMlfOrLcUz11WURziZ1W1gYYJxXn0qcYPJKTQIDfOvKC3fia/RbOxblAH6XUZHQ8HsiNscTjrHeVJI3CnSmbi+WjscklJI4fWL+3vq45aKzAvE7Ak7vG/6iciR2UmTb7aXR4XxmrhaIPFfGPLO78/nQHr/dZpL7njkjKnLdf9+3fI9/Q5h3RCwr6qlvQ6oV3TEyjVCbF38YP+LQ63GngKXS2rmYMU/xKBU4MW0jrfAU2wxVqHFofd1N/7or9s9g40eldWIrZKh0UzlmI+66fzQbMHXTnqhP5WmXiaO+PffiD2NSfiY+AV+516My6EJsmXxt04Xdbd9BG/U29m+qpUkvPmeMq13wlf0YszZq8MfLF5XhO1nYNlrCGptpK919UZlOCDDbvO1V371Wph2gzYtKHDFVEiyetJ+9t6IXlXlnK+fWPsMJ7ZX8SaXnQgdKxmvgaX1F95tq2uTCcD5oan//+E01cfIrY+JeOLXR+eiopr9ToJdzpZObiXFHBZgIfRrXGjAxcndaKhcwKt6tnAJEW795q4QFmlNtRoR2mFZw0FKB5ilS1E4Gv6Wad2xBX2lLNf9Mk56Slko7NZtZRUv10xRDnRqq2WZCjdVQzTDAPlFhTTX3VKG+jjUV/FUVk3WrqT7NMTTx+R+3uFMtSFduEQAAAABJRU5ErkJggg=="></image>
+                        <radio label="Female" style="width:30px;height:30px;" value="Female" iconSclass="z-icom-female"></radio>
+                    </radiogroup>
+                </row>
+                <row>
+                    <label value="Date of Birth"/>
+                    <datebox id="dob" hflex="1" constraint="no empty, no today,no future"></datebox>
+                </row>
+                <row>
+                    <label value="Password"/>
+                    <textbox id="passwordbox" hflex="1" constraint="no empty"></textbox>
+                </row>
+                <row>
+                    <label value="Confirm Password"/>
+                    <textbox id="confirmpasswordbox" hflex="1" constraint="no empty"></textbox>
+                </row>
+                <row id="subResButtons" style="align-items:center;justify-content:center;">                    
+                    <button id="resetButton">Reset</button>
+                    <button id="submitButton" type="submit" disabled="false" label="Submit" onClick='showContent("RegistrationSuccessful.zul")'></button>
+                                        
+                </row>
+            </rows>
+        </grid>
+    </div>
+    <zscript><![CDATA[
+         void showContent(String name){
+            org.zkoss.zul.Div ssecondDiv = (org.zkoss.zul.Div) page.getFellow("container1");
+            ssecondDiv.getChildren().clear();
+            ssecondDiv.appendChild(Executions.createComponents(name, null, null));
+       }
+       ]]>
+</zscript>
+   
+    <style>
+        .form1{
+            border:#6baccf 2px solid;
+        }
+        .radio image {
+            width: 20px;
+            height: 20px; 
+            margin-right: 5px; 
+        }
+        .marquee{
+            display: inline-block;
+            animation:scrolling 10s linear infinite;
+        }
+        @keyframes scrolling{
+            0%{
+                transform:translateX(100%);
+            }
+            100%{
+                transform:translateX(-100%);
+            }
+        }
+        .scrolling-banner{
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+            background-color: #5281c7;
+            border-radius:5px;
+            padding:10px;
+            color: white;
+        }
+
+    </style>
+</zk>

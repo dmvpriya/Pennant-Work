@@ -1,0 +1,124 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.frame1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #5281c7;
+    width: 100%;
+    height: 15%;
+    padding: 0 0px;
+}
+.frame22{
+    display:flex;    
+    height: 85%;
+}
+.frame2 {
+  
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:top;
+    background-color: #6baccf;
+    width: 150px;
+}
+
+.frame3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #9fddff;
+    width: calc(100% - 150px);
+    height:100%;
+
+    
+}
+
+.image1 {
+    width: 150px;
+    height: 98px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.image2 {
+    width: 250px;
+    height: 98px;
+    padding-left: 100px;
+}
+
+.imageBank1 {
+    width: 150px;
+    height: 98px;
+}
+
+.imageProfile1 {
+    width: 150px;
+    height: 98px;
+}
+
+.Heading1 {
+    color: white;
+    font-size: 60px;
+    font-style: normal;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: -3px -3px 0 #6baccf,  
+                    3px -3px 0 #6baccf,
+                   -3px 3px 0 #6baccf,
+                    3px 3px 0 #6baccf;
+}
+
+.Heading2 {
+    color: black;
+    background-color: rgb(0, 0, 0);   
+    font-size: 20px; 
+    border-radius: 30px;
+    padding: 10px; 
+    text-align: center;
+    margin-left: 10px;
+}
+
+.btn {
+    margin-top: 5px; 
+}
+
+label {
+    cursor: pointer; 
+}
+
+.ss{
+    width: 100%;
+    height: 100%;
+    
+    overflow: hidden;
+    padding:20px;
+
+}
+
+.ssimage{
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: opacity 1s ease;
+    
+   
+}
+
+#listOfBanks {    
+    width: 150px;
+    height: 80px;
+    background-color: rgb(219, 115, 115);
+}
+
+.item {
+    margin-bottom: 10px; 
+    width: 150px;
+    height: 40px;
+    color: black;
+}
+
