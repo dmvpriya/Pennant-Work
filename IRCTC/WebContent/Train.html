@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>TrainBooking</title>
+<link rel="stylesheet" type="text/css" href="TrainCss.css">
+</head>
+<script>
+    window.onload = function() {
+        populateDropdown("FromDropdown");
+        populateDropdown("ToDropdown");
+    };
+
+    function populateDropdown(dropdownId) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    var dropdown = document.getElementById(dropdownId);
+                    var stations = xhr.responseText;
+                    dropdown.innerHTML = stations;
+                } else {
+                    console.error('Error: ' + xhr.status);
+                }
+            }
+        };
+
+        xhr.open('POST', 'AllStationsServlet', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.send('dropdownId=' + dropdownId);
+	}
+
+
+		function populateTrainsDropdown(){
+			var fromStations = document.getElementById("FromDropdown").value;
+			var toStations = document.getElementById("ToDropdown").value;
+			var date = document.getElementById("Date").value;
+			var today = new Date();
+
+			var todayFormatted = today.toISOString().slice(0,10);
+
+			if(fromStations!='0' && toStations!='0' && fromStations!=toStations && date>=todayFormatted){
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState == XMLHttpRequest.DONE){
+						if(xhr.status == 200){
+							var dropdown = document.getElementById("TrainsDropdown");
+							var trains = xhr.responseText;
+							dropdown.innerHTML = trains;
+						}
+						else{
+                            console.error('Error: '+xhr.status);
+                        }
+					}
+				};
+
+				xhr.open('POST', 'FetchTrainsServlet', true);
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhr.send('fromStations='+fromStations+'&toStations='+toStations+'&date='+date);
+            }
+			else{
+				alert("Please select valid from and to stations");
+			}
+
+			}
+		
+    
+</script>
+<body>
+    <div class="TrainContainer">
+        <label class="pageTitle">Train Booking</label>
+        <form action="AllStationsServlet" method="post" id="TrainBookingForm" >
+            <table class="formTable">
+                <tr>
+                    <th>From</th>
+                    <td><select id="FromDropdown" name="FromDropdown" class="selectBox">
+                        <option value="0">Select</option>
+                    </select></td>
+                    <th>To</th>
+                    <td><select id="ToDropdown" name="ToDropdown" class="selectBox" onchange="populateTrainsDropdown()">
+                        <option value="0">Select</option>
+                    </select></td>
+                </tr>
+				<tr>
+                    <th>Date</th>
+                    <td><input type="date" id="date" name="Date" class="dateInput"></td>
+                </tr>
+                <tr>
+                    <th colspan="1">Trains Available</th>
+                    <td colspan="3">
+                        <select name="TrainsDropdown" class="selectBox" style="width: 100%;">
+                            <option value="0">Select</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Class</th>
+                    <td colspan="3"><select name="TrainClass" class="selectBox">
+                        <option value="0">Select</option>
+                        <option value="1">A Class</option>
+                        <option value="2">B Class</option>
+                        <option value="3">Sleeper Class</option>
+                        <option value="3">General Class</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <th>Passengers</th>
+                    <td colspan="3"><button name="AddPass" class="button">Add Passengers</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

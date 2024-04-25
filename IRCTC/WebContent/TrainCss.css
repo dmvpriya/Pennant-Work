@@ -1,0 +1,42 @@
+/* Common styles for both login.html and train.html */
+.pageTitle {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.selectBox {
+    padding: 5px;
+    width: 200px;
+}
+
+.dateInput {
+    padding: 5px;
+    width: 200px;
+}
+
+.button {
+    padding: 10px 20px;
+}
+
+/* Additional styles specific to train.html */
+.TrainContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gray;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.formTable {
+    width: 100%;
+}
+
+.formTable th, .formTable td {
+    padding: 5px;
+}
+
+.formTable th {
+    text-align: right;
+}
