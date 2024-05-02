@@ -1,0 +1,46 @@
+body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+    .container {
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+    .frame1, .frame2, .frame3 {
+        margin-bottom: 20px;
+    }
+    .frame1, .frame2, .frame3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .frame1 {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+    }
+    .frame2, .frame3 {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 20px 0;
+    }
+    .frame3 {
+        padding-top: 20px;
+    }
+    .profileContainer, .headingContainer, .cartContainer {
+        text-align: center;
+    }
+    .category, .Price, .Sort, .Products, .Product, .Add {
+        text-align: center;
+    }
+    table {
+        width: 100%;
+    }
+    table th, table td {
+        border: 1px solid #ccc;
+        padding: 8px;
+    }
