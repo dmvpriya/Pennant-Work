@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="checkOutContainer" style="background-color:#a6c7a7;marign:100px;display: flex;justify-content: center;align-items: center;">
+    <table style="border:none;margin:30px;">
+        <tr style="padding:10px;">
+            <th style="padding:10px;">Product Name</th>
+            <th style="padding:10px;">Price</th>
+            <th style="padding:10px;">Quantity</th>
+            <th style="padding:10px;">GST</th>
+            <th style="padding:10px;">Pincode</th>
+            <th style="padding:10px;">Shipping Charges</th>
+        </tr>
+        {{order_details}}
+    </table>
+</div>
+<p style="background-color:#a6c7a7;padding:20px;">Total Amount: {{total_amount}}</p>
+<button id="checkoutButton">Checkout</button>
+	
+</body>
+</html>
