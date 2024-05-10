@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="CartItem" style="background-color:#a6c7a7; padding:10px;width:200px;height:300px;margin-left:590px;margin-right:600px;">
+    <img src="{{image}}" class="CartItemImg" style="width:100px;height:100px;">
+    <div class="CartItemInfo" style="background-color:white;height:200px;">
+        <label class="CartItemName" style="padding:10px;">Product : {{name}}</label><br>
+        <label class="CartItemPrice" style="padding:20px;">{{price}}</label><br>
+        <label class="CartItemGST" style="padding:10px;">{{gst}}</label><br>
+        <label class="CartItemGST" style="padding:10px;">{{pincode}}</label><br>
+        <button id="remove" style="padding:10px;">-</button>
+        <span class="quantity" style="padding:10px;">{{quantity}}</span>
+        <button id="add" style="padding:10px;">+</button><br>
+        <button id="clearCartButton" style="padding:10px;">Clear Cart</button>
+        <div class="totalAmount" style="background-color:#a6c7a7;"></div>
+    </div>
+    <div class="cartContainer"></div>
+</div>
+	
+</body>
+</html>
