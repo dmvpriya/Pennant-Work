@@ -1,0 +1,6 @@
+com\spring\repository\DataRepository.class
+com\spring\service\DataService.class
+com\spring\model\DataModel.class
+com\spring\config\AppConfig.class
+com\spring\service\DataDAO.class
+com\spring\controller\DataController.class
